@@ -1,0 +1,64 @@
+sudo apt-get install build-essential checkinstall cvs subversion git-core mercurial libboost-all-dev emacs libfltk1.3 libfltk1.3-dev freeglut3 freeglut3-dev valgrind kcachegrind valkyrie cmake gdb ddd gnuplot-x11 gnuplot python-gnuplot gnuplot-doc libgnuplot-iostream-dev libgnuplot-iostream-doc
+
+Packages needed:
+	Boost
+	GoogleSparseHash (or sudo apt-get install libsparsehash-dev -- note: OLDER)
+	FLTK
+	GoogleTest (or sudo apt-get install libgtest-dev -- note: OLDER)
+	libDAI (also intall libgmp-dev)
+	TreeD
+	Gurobi
+	Gnuplot (for generating charts)
+
+How to GDB:
+    gdb driver
+    r benchmark/small_example1.map benchmark/small_example1.agents benchmark/emptyEGraph.txt 1.0 1.249
+    bt (to show the trace)
+    note -- have to compile with -g and no optimizations
+
+------------------
+
+If you have any questions please don't hesitate to contact me (lironcoh@usc.edu)
+
+*** INSTALLATION ***
+
+The following instructions work on a fresh install of Ubuntu 14.04, but should work on any other system as long as you can adapt it.
+
+We use many packages such as:
+	Boost
+	GoogleSparseHash (or sudo apt-get install libsparsehash-dev -- note: OLDER)
+	FLTK
+	GoogleTest (or sudo apt-get install libgtest-dev -- note: OLDER)
+	libDAI (also intall libgmp-dev)
+	TreeD
+	Gurobi
+	Gnuplot (for generating charts)
+
+The following command would install most automatically:
+sudo apt-get install build-essential checkinstall cvs subversion git-core mercurial libboost-all-dev emacs libfltk1.3 libfltk1.3-dev freeglut3 freeglut3-dev valgrind kcachegrind valkyrie cmake gdb ddd gnuplot-x11 gnuplot python-gnuplot gnuplot-doc libgnuplot-iostream-dev libgnuplot-iostream-doc
+
+You would still have to install Gurobi (and aquire a liecense) if you want to experiment with the STP. Make sure you update GUROBIFLAGS in the Makefile with the right directory.
+
+You might have to install GoogleSparseHash. You can try sudo apt-get install sparsehash, but I used a newer version than the one available at the time from the Ubuntu repository (sparsehash-2.0.2.tar.gz in this archive). You can follow their readme to compile and install it.
+
+You would have to install libDAI and update LIBDAIFLAGS and DAILIB in the Makefile with the right directory. You should follow their readme for how to compile and install it. (libDAI-0.3.2.tar.gz in this archive contain the library I used.)
+
+You would have to install TreeD and update TREEDFLAGS and TREEDLIB in the Makefile with the right directory. (treed.zip in this archive contain the library I used.)
+
+*** Compiling and running ***
+"make gui" ("make executable") would compile the GUI (command line interface)
+
+Once it compiles, mapf_gui would load a GUI which allows you to load map/agents/highway files, specify highway and focal weigths, learn highways and visualize many things.
+
+The command line interface (still named driver) gets the following flags:
+Options:
+  --help                Print help messages
+  --map arg             Map filename
+  --agents arg          Agents filename
+  --highway arg         Highway filename or CRISSCROSS / GM / HONG
+  --focal_w arg         Focal weight
+  --highway_w arg       Highway weight
+  --search arg (=ECBS)  Search method (ECBS or TCBS. Default is ECBS)
+  --tweakGVal arg (=0)  Change the cost structure or not (deprecated)
+  --RRR arg (=0)        Random Restart #iterations (Default is 0, which runs 
+                        once for root node with agents ordered sequentially)

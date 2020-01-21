@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.tcc": "cpp",
+        "dense_hash_map": "cpp"
+    }
+}

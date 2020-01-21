@@ -1,9 +1,9 @@
 ## Execute the BASH script "./main.sh" and select one of this opttions:
 
 ### 1) Instance_fixer
-       * Reorders files (original instances) from Input_original to Input_fix.
-       * Files from Input_original have inverted x and y values.
-       * x and y values are modified due to the frames added to the maps (+1).
+* Reorders files (original instances) from Input_original to Input_fix.
+* Files from Input_original have inverted x and y values.
+* x and y values are modified due to the frames added to the maps (+1).
 
 ### 2) Instance_generator
        * Generate random instances using maps from Maps_fix.

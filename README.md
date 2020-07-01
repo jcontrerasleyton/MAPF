@@ -4,7 +4,7 @@
 
 * Windowed Hierarchical Cooperative A* (WHCA*) (D.Silver, 2006).
 * improved Windowed Hierarchical Cooperative A* (iWHCA*).
-* Windowed Conflict Based Search (WCBS).
+* Windowed Conflict Based Search (WCBS), new algorithm by Jean Contreras.
 
 
 ### Explanation:
